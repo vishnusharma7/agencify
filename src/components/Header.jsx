@@ -63,7 +63,7 @@ const Header = () => {
           </svg>
         </div>
         <div >
-          <ul className="flex justify-center gap-5 align-middle text-text-color text-2xl">
+          <ul className="flex justify-center gap-5 align-middle text-text-color text-xl cursor-pointer">
             <li>Home</li>
            <li>About</li>
            <li>Service</li>
