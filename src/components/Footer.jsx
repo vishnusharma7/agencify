@@ -57,8 +57,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg-primary-dark-80  overflow-hidden flex flex-col items-center justify-center pt-[100px] px-0 pb-0 box-border gap-[100px] text-left text-41xl-2 text-secondary-light-10 font-h4-desktop-h4-bold">
-        <div className="w-[1240px] flex flex-row flex-wrap items-start justify-start gap-[100px]">
-          <div className="shrink-0 flex flex-col items-start justify-start gap-[20px]">
+        <div className="w-[1240px] flex flex-row flex-wrap items-start justify-start gap-[100px] ">
+          <div className="shrink-0 flex flex-col items-start justify-start gap-[20px] min-w-[400px]">
             <div className="shrink-0 flex flex-row items-center justify-start gap-[13.37px]">
               <img
                 className="relative w-[40.2px] h-10 object-cover"
@@ -98,10 +98,10 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex-1 flex flex-col items-start justify-start gap-[60px] text-23xl ">
+          <div className="flex-1 flex flex-col items-start justify-start gap-[60px] text-23xl min-w-[400px] ">
             <div className="self-stretch flex flex-col items-start justify-start gap-[10px]">
               <b className="self-stretch relative">About Us</b>
-              <div className="self-stretch relative text-lg leading-[27px] font-medium font-paragraphs-para-16px-semibold text-secondary-light-30">
+              <div className="self-stretch relative  text-lg leading-[27px] font-medium font-paragraphs-para-16px-semibold text-secondary-light-30">
                 With a mission focused on strategic marketing, we're here to be
                 your trusted partner, helping you navigate the complex marketing
                 landscape. Choose us for our expertise, experience, and

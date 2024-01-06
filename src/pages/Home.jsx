@@ -1,70 +1,105 @@
-import React from "react";
-
+import React, { useState } from "react";
 
 const Home = () => {
-  
+  const accordionItems = [
+    {
+      question: "What services does your marketing agency offer?",
+      answer:
+        "This question helps potential clients understand the range of services your agency provides, such as digital marketing, social media management, content creation, SEO, PPC, email marketing, and more.",
+    },
+    {
+      question: "How can your agency help my business?",
+      answer: "Your answer here.",
+    },
+    {
+      question: "What is your pricing structure?",
+      answer: "Your answer here.",
+    },
+    {
+      question: "Can you provide examples of successful campaigns you've worked on?",
+      answer: "Certainly! We have executed numerous successful campaigns for our clients, spanning various industries. For instance, we helped Company XYZ increase their online visibility through a targeted SEO strategy, resulting in a significant boost in organic traffic and conversions.",
+    },
+    {
+      question: "How do you tailor your marketing strategies to fit the unique needs of each client?",
+      answer: "Our approach involves a thorough understanding of each client's business, industry, and goals. We conduct comprehensive assessments and customize strategies to address specific challenges and capitalize on opportunities. This ensures that our marketing efforts align perfectly with the unique needs and objectives of each client.",
+    },
+    {
+      question: "What tools and technologies does your agency use for analytics and reporting?",
+      answer: "We leverage cutting-edge analytics tools and technologies to track and measure the performance of our campaigns. This includes industry-standard tools such as Google Analytics, social media analytics platforms, and proprietary tools developed in-house. Our robust reporting systems provide clients with detailed insights into key performance indicators, allowing for data-driven decision-making and continuous improvement.",
+    },
+    // Add more items as needed
+  ];
+
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <>
-     <div className="self-stretch [background:radial-gradient(50%_50%_at_50%_50%,_#180032,_#05000a)] overflow-hidden flex flex-col items-start justify-center pt-[120px] px-[100px] pb-0 border-b-[5px] border-solid border-gradient-primary-gradient">
+      <div className="self-stretch [background:radial-gradient(50%_50%_at_50%_50%,_#180032,_#05000a)] overflow-hidden flex flex-col items-start justify-center pt-[120px] px-[100px] pb-0 border-b-[5px] border-solid border-gradient-primary-gradient">
         <div className="self-stretch flex flex-row flex-wrap items-start justify-start gap-[80px]">
-        <div className="flex-1 flex flex-col items-start justify-center gap-[20px] text-left text-41xl text-secondary-light-10 font-paragraphs-para-16px-semibold">
-      <div className="self-stretch flex flex-col items-start justify-center gap-[15px] min-w-[360px]">
-        <b className="self-stretch relative font-h4-desktop-h4-bold">
-          Your Brand's Future, Our Marketing Expertise
-        </b>
-        <div className="self-stretch relative text-lg leading-[27px] font-medium text-secondary-light-40">
-          We understand that each business is unique, and our tailor-made
-          strategies are designed to amplify your individuality and propel your
-          success.
-        </div>
-        <div className="rounded-26xl-7 [background:linear-gradient(140.99deg,_#aace88,_#211e3b_76.04%,_#211e3b_84.38%,_#211e3b)] flex flex-row items-center justify-center py-[15px] px-[30px] box-border gap-[10px] min-w-[140px] text-base">
-          <b className="relative leading-[28px]">Request a Quote</b>
-          <img
-            className="relative w-6 h-6 overflow-hidden shrink-0 object-cover"
-            alt=""
-            src="/btn-icons@2x.png"
-          />
-        </div>
-      </div>
-      <div className="self-stretch flex flex-row flex-wrap items-center justify-start py-2.5 px-0 gap-[10px] text-base text-secondary-light-40">
-        <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
-          <img
-            className="relative w-3.5 h-3.5 object-cover"
-            alt=""
-            src="/star@2x.png"
-          />
-          <div className="relative leading-[25px] font-medium">
-            Enhanced Online Visibility
+          <div className="flex-1 flex flex-col items-start justify-center gap-[20px] text-left text-41xl text-secondary-light-10 font-paragraphs-para-16px-semibold">
+            <div className="self-stretch flex flex-col items-start justify-center gap-[15px] min-w-[360px]">
+              <b className="self-stretch relative font-h4-desktop-h4-bold">
+                Your Brand's Future, Our Marketing Expertise
+              </b>
+              <div className="self-stretch relative text-lg leading-[27px] font-medium text-secondary-light-40">
+                We understand that each business is unique, and our tailor-made
+                strategies are designed to amplify your individuality and propel
+                your success.
+              </div>
+              <div className="rounded-26xl-7 [background:linear-gradient(140.99deg,_#aace88,_#211e3b_76.04%,_#211e3b_84.38%,_#211e3b)] flex flex-row items-center justify-center py-[15px] px-[30px] box-border gap-[10px] min-w-[140px] text-base">
+                <b className="relative leading-[28px]">Request a Quote</b>
+                <img
+                  className="relative w-6 h-6 overflow-hidden shrink-0 object-cover"
+                  alt=""
+                  src="/btn-icons@2x.png"
+                />
+              </div>
+            </div>
+            <div className="self-stretch flex flex-row flex-wrap items-center justify-start py-2.5 px-0 gap-[10px] text-base text-secondary-light-40">
+              <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
+                <img
+                  className="relative w-3.5 h-3.5 object-cover"
+                  alt=""
+                  src="/star@2x.png"
+                />
+                <div className="relative leading-[25px] font-medium">
+                  Enhanced Online Visibility
+                </div>
+              </div>
+              <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
+                <img
+                  className="relative w-3.5 h-3.5 object-cover"
+                  alt=""
+                  src="/star@2x.png"
+                />
+                <div className="relative leading-[25px] font-medium">
+                  Customized Strategies
+                </div>
+              </div>
+              <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
+                <img
+                  className="relative w-3.5 h-3.5 object-cover"
+                  alt=""
+                  src="/star@2x.png"
+                />
+                <div className="relative leading-[25px] font-medium">
+                  Improved Branding
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
+          <div className="flex justify-center ">
           <img
-            className="relative w-3.5 h-3.5 object-cover"
-            alt=""
-            src="/star@2x.png"
-          />
-          <div className="relative leading-[25px] font-medium">
-            Customized Strategies
-          </div>
-        </div>
-        <div className="shrink-0 flex flex-row items-center justify-start gap-[4px]">
-          <img
-            className="relative w-3.5 h-3.5 object-cover"
-            alt=""
-            src="/star@2x.png"
-          />
-          <div className="relative leading-[25px] font-medium">
-            Improved Branding
-          </div>
-        </div>
-      </div>
-    </div>
-          <img
-            className="relative w-[536.5px] h-[529px] object-cover"
+            className="relative w-[536.5px]  h-[529px] object-cover"
             alt=""
             src="/hero-image@2x.png"
           />
+          </div>
+          
         </div>
       </div>
       <div className="self-stretch bg-secondary-light-10 overflow-hidden flex flex-col items-center justify-start py-[60px] px-[100px] text-left text-17xl font-h4-desktop-h4-bold">
@@ -1312,12 +1347,12 @@ const Home = () => {
                 <div className="self-stretch relative leading-[30px] font-semibold">
                   Logan Wilson
                 </div>
-                <div className="self-stretch relative text-base leading-[25px] font-paragraphs-para-16px-semibold text-secondary-dark-40">
+                <p className="self-stretch relative text-base leading-[25px] font-paragraphs-para-16px-semibold text-secondary-dark-40">
                   The company's commitment to technical excellence and their
                   passion for storytelling shine through in every episode we
                   produce together. It's been a fantastic experience
                   collaborating with SparkCast.
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -1861,10 +1896,10 @@ const Home = () => {
       <div className="self-stretch bg-secondary-light-10 overflow-hidden flex flex-col items-center justify-center py-[120px] px-[100px]">
         <div className="self-stretch flex flex-col items-center justify-center gap-[50px]">
           <div className="w-[900px] flex flex-col items-center justify-center gap-[15px] min-w-[360px]">
-            <b className="self-stretch relative font-h4-desktop-h4-bold">
+            <b className="self-stretch relative text-center font-h4-desktop-h4-bold">
               Frequently Asked Questions
             </b>
-            <div className="self-stretch relative text-lg leading-[27px] font-medium text-secondary-dark-50">
+            <div className="self-stretch relative text-center text-lg leading-[27px] font-medium text-secondary-dark-50">
               Let's explore how we can help your business thrive in the
               ever-evolving marketing landscape.
             </div>
@@ -1878,118 +1913,35 @@ const Home = () => {
             </div>
           </div>
           <div className="self-stretch flex flex-row flex-wrap items-center justify-center gap-[40px] text-left text-5xl text-secondary-dark-50 font-h4-desktop-h4-bold">
-            <div className="flex-1 flex flex-col items-start justify-start gap-[20px] min-w-[360px]">
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center py-[35px] px-10 gap-[20px] border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    What services does your marketing agency offer?
+            {accordionItems.map((item, index) => (
+              <div
+                key={index}
+                className="flex-1 flex flex-col items-start justify-start gap-[20px] min-w-[400px]"
+              >
+                <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center py-[35px] px-10 gap-[10px] border-[1px] border-solid border-secondary-light-70">
+                  <div
+                    className="self-stretch flex flex-row items-baseline justify-center gap-[31px] cursor-pointer"
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <div className="flex-1 relative leading-[30px] font-semibold">
+                      {item.question}
+                    </div>
+                    <img
+                      className={`relative w-4 h-4 overflow-hidden shrink-0 object-cover transform ${
+                        openIndex === index ? "rotate-180" : "rotate-0"
+                      }`}
+                      alt=""
+                      src="/acc-icon@2x.png"
+                    />
                   </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-                <div className="self-stretch relative text-xl leading-[30px] font-paragraphs-para-16px-semibold text-secondary-dark-40">
-                  This question helps potential clients understand the range of
-                  services your agency provides, such as digital marketing,
-                  social media management, content creation, SEO, PPC, email
-                  marketing, and more.
+                  {openIndex === index && (
+                    <div className="self-stretch relative text-xl leading-[30px] font-paragraphs-para-16px-semibold text-secondary-dark-40">
+                      {item.answer}
+                    </div>
+                  )}
                 </div>
               </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    How can your agency help my business?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    What is your pricing structure?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    How do you stay up-to-date with industry trends?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="flex-1 flex flex-col items-start justify-start gap-[20px] min-w-[360px]">
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center py-[35px] px-10 gap-[20px] border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative tracking-[0.02em] leading-[32px] font-semibold">
-                    How do I choose the right voice artist?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-                <div className="self-stretch relative text-xl leading-[30px] font-paragraphs-para-16px-semibold text-secondary-dark-40">
-                  A podcast is a digital audio or video series that you can
-                  listen to or watch online. It covers various topics and
-                  interests, similar to a radio or television show, but you can
-                  stream or download episodes at your convenience.
-                </div>
-              </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    What is your pricing structure?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    What sets your agency apart from competitors?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-              <div className="self-stretch rounded-mini bg-secondary-light-10 shadow-[5px_5px_20px_rgba(0,_0,_0,_0.05)] flex flex-col items-start justify-center pt-[25px] px-10 pb-7 border-[1px] border-solid border-secondary-light-70">
-                <div className="self-stretch flex flex-row items-baseline justify-center gap-[31px]">
-                  <div className="flex-1 relative leading-[30px] font-semibold">
-                    How do you measure the success of campaigns?
-                  </div>
-                  <img
-                    className="relative w-4 h-4 overflow-hidden shrink-0 object-cover"
-                    alt=""
-                    src="/acc-icon@2x.png"
-                  />
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
